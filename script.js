@@ -110,7 +110,4 @@ calculator.addEventListener("click", function (e) {
   }
 });
 
-// Then in the main display it only shows one element of the array at once
-// Makes it easier to stop user from inputting multiple operators
-// multiple operators can be deal with by using array length
-// equal function is run when operand clicked when arraylength === 2
+// Add keybpoard support
