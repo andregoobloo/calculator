@@ -1,7 +1,7 @@
 "use strict";
 
-const fullOutput = document.querySelector(".full-output");
-const singleOutput = document.querySelector(".single-output");
+// const fullOutput = document.querySelector(".full-output");
+const display = document.querySelector(".display");
 const calculator = document.querySelector(".calculator");
 const numberBtns = document.querySelectorAll(".num");
 const operatorBtns = document.querySelectorAll(".operator");
@@ -32,13 +32,19 @@ const operate = function (num1, num2, operator) {
   return operator(num1, num2);
 };
 
-// calculator.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   if (e.target.classList.contains("num")) {
-//     display.textContent = e.target.innerText;
-//     console.log(e.target.innerText);
-//   }
-//   if (e.target.classList.contains("clear")) {
-//     display.textContent = 0;
-//   }
-// });
+calculator.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (e.target.classList.contains("num")) {
+    display.textContent += e.target.innerText;
+    console.log(e.target.innerText);
+  }
+  if (e.target.classList.contains("operator")) {
+    display.textContent += e.target.innerText;
+  }
+  if (e.target.classList.contains("clear")) {
+    display.textContent = "";
+  }
+  if (e.target.classList.contains("delete")) {
+    display.textContent = display.textContent.slice(0, -1);
+  }
+});
