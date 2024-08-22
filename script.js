@@ -31,6 +31,22 @@ const divide = function (num1, num2) {
   return num1 / num2;
 };
 
+const equals = function () {
+  if (operator === multiply) {
+    displayArray = display.textContent.split(`x`);
+  } else if (operator === divide) {
+    displayArray = display.textContent.split(`÷`);
+  } else if (operator === add) {
+    displayArray = display.textContent.split(`+`);
+  } else if (operator === subtract) {
+    displayArray = display.textContent.split(`-`);
+  }
+  num1 = Number(displayArray[0]);
+  num2 = Number(displayArray[1]);
+  let result = operate(num1, num2, operator);
+  display.textContent = result;
+};
+
 const operate = function (num1, num2, operator) {
   return operator(num1, num2);
 };
@@ -64,18 +80,6 @@ calculator.addEventListener("click", function (e) {
     display.textContent = display.textContent.slice(0, -1);
   }
   if (e.target.classList.contains("equals")) {
-    if (operator === multiply) {
-      displayArray = display.textContent.split(`x`);
-    } else if (operator === divide) {
-      displayArray = display.textContent.split(`÷`);
-    } else if (operator === add) {
-      displayArray = display.textContent.split(`+`);
-    } else if (operator === subtract) {
-      displayArray = display.textContent.split(`-`);
-    }
-    num1 = Number(displayArray[0]);
-    num2 = Number(displayArray[1]);
-    let result = operate(num1, num2, operator);
-    display.textContent = result;
+    equals();
   }
 });

@@ -26,7 +26,10 @@ body {
   align-content: center;
   text-align: end;
   padding-right: 20px;
+  padding-left: 20px;
   height: 100px;
+  inline-size: 100px;
+  overflow-wrap: break-word;
 }
 
 button {
